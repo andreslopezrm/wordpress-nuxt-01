@@ -11,20 +11,30 @@ useMeta({
       ],
       bodyAttrs: {
         class: 'test'
-      }
+      },
+      link: [
+        {
+          rel:"stylesheet", href:"/global.css"
+        }
+      ]
 })
 
 </script>
 
 <template>
   <div>
-    Counter: {{ counter }}
-    <button @click="counter++">
-      +
-    </button>
-    <button @click="counter--">
-      -
-    </button>
-  </div>
-  <p>{{ first }}</p>
+    <NuxtLink to="/">
+            Home
+          </NuxtLink>
+    <div>
+      Counter: {{ counter }}
+      <button @click="counter++">
+        +
+      </button>
+      <button @click="counter--">
+        -
+      </button>
+    </div>
+    <p>{{ first }}</p>
+</div>
 </template>

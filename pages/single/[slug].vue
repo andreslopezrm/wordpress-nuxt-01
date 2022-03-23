@@ -1,21 +1,21 @@
 <template>
     <div class="app">
-    <h1 class="site-name">
-      <NuxtLink to="/">Sitio con Nuxt(Vue) 😎👍</NuxtLink>
-    </h1>
-
-    <main class="single">
-      <figure class="feature">
-        <img
-          :src="post['_embedded']['wp:featuredmedia'][0].source_url"
-          alt=""
-        />
-      </figure>
-      <h1 class="title">
-        {{ post.title.rendered }}
+      <h1 class="site-name">
+        <NuxtLink to="/">Sitio con Nuxt(Vue) 😎👍</NuxtLink>
       </h1>
-      <div class="content" v-html="post.content.rendered"></div>
-    </main>
+
+      <main class="single">
+        <figure class="feature">
+          <img
+            :src="post['_embedded']['wp:featuredmedia'][0].source_url"
+            alt=""
+          />
+        </figure>
+        <h1 class="title">
+          {{ post.title.rendered }}
+        </h1>
+        <div class="content" v-html="post.content.rendered"></div>
+      </main>
   </div>
 </template>
 <script setup>
@@ -47,12 +47,7 @@
       ],
       bodyAttrs: {
         class: 'single'
-      },
-      link: [
-        {
-          rel:"stylesheet", href:"/global.css"
-        }
-      ]
+      }
 })
 
 </script>

@@ -35,11 +35,6 @@ useMeta({
       ],
       bodyAttrs: {
         class: 'home'
-      },
-      link: [
-        {
-          rel:"stylesheet", href:"/global.css"
-        }
-      ]
+      }
 })
 </script>

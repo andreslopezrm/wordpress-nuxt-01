@@ -20,6 +20,7 @@
 </template>
 <script setup>
     import { removeTags } from '../../utils/clean'
+    import { replaceLinksInSingle } from '../../utils/post'
 
     const route = useRoute();
     const slug = route.params.slug;
@@ -27,6 +28,8 @@
     const { data } = await useAsyncData('single', () => $fetch(`https://wordpressclasicouno.alrserver.online/wp-json/wp/v2/posts?_embed&slug=${slug}`));
     const post = data.value[0]
     const description = removeTags(post.excerpt.rendered);
+
+    post.content.rendered = replaceLinksInSingle(post.content.rendered);
 
     useMeta({
       title: post.title.rendered,
